@@ -1,0 +1,16 @@
+Clase incidencia (datos de la
+actualización, el momento (fecha y hora) en que se intentó actualizar 
+y el motivo por el cual se ha
+producido el fallo.)
+
+Clase ciudadano (id no identity)
+Clase matrimonio (id identity, Dos ids y fecha)
+Clase divorcio (Dos ids y fecha)
+Clase muerte
+
+
+Clase Asiento que contenga objetos de todas las clases necesarias (Array por jaxb)
+Clase matrimonio, divorcio, etc. dentro de la clase asiento, para crear un objeto de cada
+tipo según el tipo del asiento
+Hacer updates, inserts y mierdas con ciudadane, matrimonio y pastas
+Preguntar a leo sobre insert divorcio con dos transacciones
