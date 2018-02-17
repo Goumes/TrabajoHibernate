@@ -1,4 +1,4 @@
-Clase incidencia (datos de la
+Clase incidencia (datos de la 
 actualización, el momento (fecha y hora) en que se intentó actualizar 
 y el motivo por el cual se ha
 producido el fallo.)
