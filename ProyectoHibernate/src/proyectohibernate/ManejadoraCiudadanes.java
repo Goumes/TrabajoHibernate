@@ -25,7 +25,7 @@ public class ManejadoraCiudadanes
      * Salidas: Un objeto Ciudadanes
      * Postcondiciones: El ciudadane creado en la badat y el objeto hecho persistente.
     */
-    public Ciudadanes crearCiudadane (Session ses, int id, Serializable nombre, Serializable apellidos, char sexo, Ciudadanes madre, Ciudadanes padre, Pastas pastas, Short kgPasta, Date fechaNacimiento)
+    public Ciudadanes crearCiudadane (Session ses, int id, String nombre, String apellidos, char sexo, Ciudadanes madre, Ciudadanes padre, Pastas pastas, Short kgPasta, Date fechaNacimiento)
     {
         Transaction tran;
         tran = ses.beginTransaction();
@@ -33,12 +33,12 @@ public class ManejadoraCiudadanes
         ciudadane.setId(id);
         ciudadane.setApellidos(apellidos);
         ciudadane.setNombre (nombre);
-        ciudadane.setCiudadanesByIdMadre(madre);
-        ciudadane.setCiudadanesByIdPadre(padre);
+        ciudadane.setIDmadre(madre);
+        ciudadane.setIDpadre(padre);
         ciudadane.setSexo(sexo);
-        ciudadane.setPastas(pastas);
-        ciudadane.setKgPasta(kgPasta);
-        ciudadane.setFechaNacimiento(fechaNacimiento);
+        ciudadane.setPastafavorita(pastas);
+        ciudadane.setKGpasta(kgPasta);
+        ciudadane.setFechanacimiento(fechaNacimiento);
         ses.save(ciudadane);
         tran.commit();
         
@@ -51,7 +51,7 @@ public class ManejadoraCiudadanes
      * Salidas: Un objeto Ciudadanes
      * Postcondiciones: El ciudadane creado en la badat y el objeto hecho persistente.
     */
-    public Ciudadanes crearCiudadaneHuerfano (Session ses, int id, Serializable nombre, Serializable apellidos, char sexo, Pastas pastas, Short kgPasta, Date fechaNacimiento)
+    public Ciudadanes crearCiudadaneHuerfano (Session ses, int id, String nombre, String apellidos, char sexo, Pastas pastas, Short kgPasta, Date fechaNacimiento)
     {
         Transaction tran;
         tran = ses.beginTransaction();
@@ -60,9 +60,9 @@ public class ManejadoraCiudadanes
         ciudadane.setApellidos(apellidos);
         ciudadane.setNombre (nombre);
         ciudadane.setSexo(sexo);
-        ciudadane.setPastas(pastas);
-        ciudadane.setKgPasta(kgPasta);
-        ciudadane.setFechaNacimiento(fechaNacimiento);
+        ciudadane.setPastafavorita(pastas);
+        ciudadane.setKGpasta(kgPasta);
+        ciudadane.setFechanacimiento(fechaNacimiento);
         ses.save(ciudadane);
         tran.commit();
         
@@ -80,7 +80,7 @@ public class ManejadoraCiudadanes
         Transaction tran;
         tran = ses.beginTransaction();
         
-        ciudadane.setFechaMuerte(fechaMuerte);
+        ciudadane.setFechamuerte(fechaMuerte);
         ses.update(ciudadane);
         
         tran.commit();

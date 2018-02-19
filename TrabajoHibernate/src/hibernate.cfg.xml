@@ -41,12 +41,9 @@ Contributor(s):
 -->
 <hibernate-configuration>
   <session-factory>
-    <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-    <property name="hibernate.connection.url">jdbc:sqlserver://localhost\Leopolis:1433;databaseName=Leopolis</property>
     <property name="hibernate.connection.username">prueba</property>
     <property name="hibernate.connection.password">123</property>
-    <mapping class="clasesHibernate.Ciudadanes"/>
-    <mapping class="clasesHibernate.Matrimonios"/>
-    <mapping class="clasesHibernate.Pastas"/>
+    <property name="hibernate.connection.url">jdbc:sqlserver://localhost\Leopolis:1433;databaseName=Leopolis</property>
+    <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
   </session-factory>
 </hibernate-configuration>

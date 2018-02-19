@@ -77,7 +77,7 @@ public class Ciudadanes implements Serializable {
     @ManyToOne
     private Ciudadanes iDpadre;
     @JoinColumn(name = "Pasta_favorita", referencedColumnName = "NombrePasta")
-    @ManyToOne(optional = false,cascade=CascadeType.ALL)
+    @ManyToOne(optional = false)
     private Pastas pastafavorita;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "iDConyuge1")
     private Collection<Matrimonios> matrimoniosCollection;

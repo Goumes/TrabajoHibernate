@@ -81,6 +81,7 @@ public class Main {
         //Mientras quiera leer fichero
         while(opcion==1)
         {
+            //LeerYValidarNombreFichero
             do
             {
                 System.out.println("Introduzca el nombre del fichero que desea procesar: ");
@@ -96,7 +97,7 @@ public class Main {
                     System.out.println("El fichero indicado no existe");
                 }
             }while(nombreArchivo.equals("")||!archivoAProcesar.exists()||archivoAProcesar.isDirectory());
-            
+            //Fin_LeerYValidarNombreFichero
             //JAXB A JIERRO DE POWER
             gestoraAsientos.obtenerListaAnotacionesDeXML(archivoAProcesar);
             gestoraMain.realizarActualizaciones(gestoraAsientos.getListaAsientos());
@@ -119,6 +120,6 @@ public class Main {
         }
         //Fin_Mientras
         
-    }
+    }//FIN
     
 }

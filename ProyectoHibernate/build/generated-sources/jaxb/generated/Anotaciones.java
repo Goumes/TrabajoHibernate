@@ -1,8 +1,8 @@
 //
-// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.5-2 
+// Este archivo ha sido generado por la arquitectura JavaTM para la implantacin de la referencia de enlace (JAXB) XML v2.2.5-2 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: PM.02.17 a las 07:23:03 PM CET 
+// Todas las modificaciones realizadas en este archivo se perdern si se vuelve a compilar el esquema de origen. 
+// Generado el: AM.02.19 a las 09:08:40 AM CET 
 //
 
 
@@ -380,13 +380,13 @@ public class Anotaciones {
         public static class Ciudadane {
 
             @XmlElementRefs({
-                @XmlElementRef(name = "Sexo", type = JAXBElement.class, required = false),
-                @XmlElementRef(name = "PastaFavorita", type = JAXBElement.class, required = false),
-                @XmlElementRef(name = "Apellidos", type = JAXBElement.class, required = false),
                 @XmlElementRef(name = "FechaNacimiento", type = JAXBElement.class, required = false),
+                @XmlElementRef(name = "Apellidos", type = JAXBElement.class, required = false),
                 @XmlElementRef(name = "Padre", type = JAXBElement.class, required = false),
-                @XmlElementRef(name = "Madre", type = JAXBElement.class, required = false),
-                @XmlElementRef(name = "Nombre", type = JAXBElement.class, required = false)
+                @XmlElementRef(name = "PastaFavorita", type = JAXBElement.class, required = false),
+                @XmlElementRef(name = "Sexo", type = JAXBElement.class, required = false),
+                @XmlElementRef(name = "Nombre", type = JAXBElement.class, required = false),
+                @XmlElementRef(name = "Madre", type = JAXBElement.class, required = false)
             })
             @XmlMixed
             protected List<Serializable> content;
@@ -413,12 +413,12 @@ public class Anotaciones {
              * Objects of the following type(s) are allowed in the list
              * {@link JAXBElement }{@code <}{@link String }{@code >}
              * {@link JAXBElement }{@code <}{@link String }{@code >}
-             * {@link JAXBElement }{@code <}{@link String }{@code >}
-             * {@link JAXBElement }{@code <}{@link String }{@code >}
              * {@link JAXBElement }{@code <}{@link Anotaciones.Asiento.Ciudadane.Padre }{@code >}
-             * {@link String }
-             * {@link JAXBElement }{@code <}{@link Anotaciones.Asiento.Ciudadane.Madre }{@code >}
              * {@link JAXBElement }{@code <}{@link String }{@code >}
+             * {@link JAXBElement }{@code <}{@link String }{@code >}
+             * {@link JAXBElement }{@code <}{@link String }{@code >}
+             * {@link JAXBElement }{@code <}{@link Anotaciones.Asiento.Ciudadane.Madre }{@code >}
+             * {@link String }
              * 
              * 
              */

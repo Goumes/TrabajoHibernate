@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19-feb-2018 9:19:26 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="clasesHibernate.Pastas" table="Pastas" schema="dbo" catalog="Leopolis" optimistic-lock="version">
+        <id name="nombrePasta" type="string">
+            <column name="NombrePasta" length="25" />
+            <generator class="assigned" />
+        </id>
+        <set name="ciudadaneses" table="Ciudadanes" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Pasta_favorita" length="25" not-null="true" />
+            </key>
+            <one-to-many class="clasesHibernate.Ciudadanes" />
+        </set>
+    </class>
+</hibernate-mapping>

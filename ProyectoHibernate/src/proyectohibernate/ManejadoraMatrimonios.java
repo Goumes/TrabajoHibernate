@@ -28,9 +28,9 @@ public class ManejadoraMatrimonios
         Transaction tran;
         tran = ses.beginTransaction();
         Matrimonios matrimonio = new Matrimonios();
-        matrimonio.setFechaMatrimonio(fechaMatrimonio);
-        matrimonio.setCiudadanesByIdconyuge1(conyuge1);
-        matrimonio.setCiudadanesByIdconyuge1(conyuge2);
+        matrimonio.setFechamatrimonio(fechaMatrimonio);
+        matrimonio.setIDConyuge1(conyuge1);
+        matrimonio.setIDConyuge2(conyuge2);
         ses.save(matrimonio);
         tran.commit();
         
@@ -48,7 +48,7 @@ public class ManejadoraMatrimonios
         Transaction tran;
         tran = ses.beginTransaction();
         
-        matrimonio.setFechaFin(fechaDivorcio);
+        matrimonio.setFechafin(fechaDivorcio);
         ses.update(matrimonio);
         
         tran.commit();

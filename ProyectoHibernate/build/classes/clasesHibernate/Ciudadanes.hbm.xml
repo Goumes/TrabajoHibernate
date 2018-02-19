@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19-feb-2018 9:19:26 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="clasesHibernate.Ciudadanes" table="Ciudadanes" schema="dbo" catalog="Leopolis" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="ciudadanesByIdPadre" class="clasesHibernate.Ciudadanes" fetch="select">
+            <column name="ID_padre" />
+        </many-to-one>
+        <many-to-one name="ciudadanesByIdMadre" class="clasesHibernate.Ciudadanes" fetch="select">
+            <column name="ID_madre" />
+        </many-to-one>
+        <many-to-one name="pastas" class="clasesHibernate.Pastas" fetch="select">
+            <column name="Pasta_favorita" length="25" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="serializable">
+            <column name="nombre" not-null="true" />
+        </property>
+        <property name="apellidos" type="serializable">
+            <column name="apellidos" not-null="true" />
+        </property>
+        <property name="fechaNacimiento" type="date">
+            <column name="Fecha_nacimiento" length="10" not-null="true" />
+        </property>
+        <property name="fechaMuerte" type="date">
+            <column name="Fecha_muerte" length="10" />
+        </property>
+        <property name="sexo" type="char">
+            <column name="Sexo" length="1" not-null="true" />
+        </property>
+        <property name="kgPasta" type="short">
+            <column name="KG_pasta" not-null="true" />
+        </property>
+        <set name="ciudadanesesForIdPadre" table="Ciudadanes" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_padre" />
+            </key>
+            <one-to-many class="clasesHibernate.Ciudadanes" />
+        </set>
+        <set name="matrimoniosesForIdconyuge2" table="Matrimonios" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDConyuge2" not-null="true" />
+            </key>
+            <one-to-many class="clasesHibernate.Matrimonios" />
+        </set>
+        <set name="matrimoniosesForIdconyuge1" table="Matrimonios" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDConyuge1" not-null="true" />
+            </key>
+            <one-to-many class="clasesHibernate.Matrimonios" />
+        </set>
+        <set name="ciudadanesesForIdMadre" table="Ciudadanes" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_madre" />
+            </key>
+            <one-to-many class="clasesHibernate.Ciudadanes" />
+        </set>
+    </class>
+</hibernate-mapping>

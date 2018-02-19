@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="clasesHibernate">
+  <ClassDiagramComponents>
+    <Class name="Ciudadanes" package="clasesHibernate" visibility="public" xPosition="475.0" yPosition="736.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellidos" type="String" visibility="private"/>
+        <Field name="fechanacimiento" type="Date" visibility="private"/>
+        <Field name="fechamuerte" type="Date" visibility="private"/>
+        <Field name="sexo" type="Character" visibility="private"/>
+        <Field name="kGpasta" type="short" visibility="private"/>
+        <Field name="ciudadanesCollection" type="Collection&lt;Ciudadanes&gt;" visibility="private"/>
+        <Field name="iDmadre" type="Ciudadanes" visibility="private"/>
+        <Field name="ciudadanesCollection1" type="Collection&lt;Ciudadanes&gt;" visibility="private"/>
+        <Field name="iDpadre" type="Ciudadanes" visibility="private"/>
+        <Field name="pastafavorita" type="Pastas" visibility="private"/>
+        <Field name="matrimoniosCollection" type="Collection&lt;Matrimonios&gt;" visibility="private"/>
+        <Field name="matrimoniosCollection1" type="Collection&lt;Matrimonios&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellidos"/>
+          <Argument type="Date" name="fechanacimiento"/>
+          <Argument type="Character" name="sexo"/>
+          <Argument type="short" name="kGpasta"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellidos" returnType="String" visibility="public"/>
+        <Method name="setApellidos" returnType="void" visibility="public">
+          <Argument type="String" name="apellidos"/>
+        </Method>
+        <Method name="getFechanacimiento" returnType="Date" visibility="public"/>
+        <Method name="setFechanacimiento" returnType="void" visibility="public">
+          <Argument type="Date" name="fechanacimiento"/>
+        </Method>
+        <Method name="getFechamuerte" returnType="Date" visibility="public"/>
+        <Method name="setFechamuerte" returnType="void" visibility="public">
+          <Argument type="Date" name="fechamuerte"/>
+        </Method>
+        <Method name="getSexo" returnType="Character" visibility="public"/>
+        <Method name="setSexo" returnType="void" visibility="public">
+          <Argument type="Character" name="sexo"/>
+        </Method>
+        <Method name="getKGpasta" returnType="short" visibility="public"/>
+        <Method name="setKGpasta" returnType="void" visibility="public">
+          <Argument type="short" name="kGpasta"/>
+        </Method>
+        <Method name="getCiudadanesCollection" returnType="Collection&lt;Ciudadanes&gt;" visibility="public"/>
+        <Method name="setCiudadanesCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Ciudadanes&gt;" name="ciudadanesCollection"/>
+        </Method>
+        <Method name="getIDmadre" returnType="Ciudadanes" visibility="public"/>
+        <Method name="setIDmadre" returnType="void" visibility="public">
+          <Argument type="Ciudadanes" name="iDmadre"/>
+        </Method>
+        <Method name="getCiudadanesCollection1" returnType="Collection&lt;Ciudadanes&gt;" visibility="public"/>
+        <Method name="setCiudadanesCollection1" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Ciudadanes&gt;" name="ciudadanesCollection1"/>
+        </Method>
+        <Method name="getIDpadre" returnType="Ciudadanes" visibility="public"/>
+        <Method name="setIDpadre" returnType="void" visibility="public">
+          <Argument type="Ciudadanes" name="iDpadre"/>
+        </Method>
+        <Method name="getPastafavorita" returnType="Pastas" visibility="public"/>
+        <Method name="setPastafavorita" returnType="void" visibility="public">
+          <Argument type="Pastas" name="pastafavorita"/>
+        </Method>
+        <Method name="getMatrimoniosCollection" returnType="Collection&lt;Matrimonios&gt;" visibility="public"/>
+        <Method name="setMatrimoniosCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Matrimonios&gt;" name="matrimoniosCollection"/>
+        </Method>
+        <Method name="getMatrimoniosCollection1" returnType="Collection&lt;Matrimonios&gt;" visibility="public"/>
+        <Method name="setMatrimoniosCollection1" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Matrimonios&gt;" name="matrimoniosCollection1"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Matrimonios" package="clasesHibernate" visibility="public" xPosition="641.0" yPosition="73.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="fechamatrimonio" type="Date" visibility="private"/>
+        <Field name="fechafin" type="Date" visibility="private"/>
+        <Field name="iDConyuge1" type="Ciudadanes" visibility="private"/>
+        <Field name="iDConyuge2" type="Ciudadanes" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+          <Argument type="Date" name="fechamatrimonio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getFechamatrimonio" returnType="Date" visibility="public"/>
+        <Method name="setFechamatrimonio" returnType="void" visibility="public">
+          <Argument type="Date" name="fechamatrimonio"/>
+        </Method>
+        <Method name="getFechafin" returnType="Date" visibility="public"/>
+        <Method name="setFechafin" returnType="void" visibility="public">
+          <Argument type="Date" name="fechafin"/>
+        </Method>
+        <Method name="getIDConyuge1" returnType="Ciudadanes" visibility="public"/>
+        <Method name="setIDConyuge1" returnType="void" visibility="public">
+          <Argument type="Ciudadanes" name="iDConyuge1"/>
+        </Method>
+        <Method name="getIDConyuge2" returnType="Ciudadanes" visibility="public"/>
+        <Method name="setIDConyuge2" returnType="void" visibility="public">
+          <Argument type="Ciudadanes" name="iDConyuge2"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Pastas" package="clasesHibernate" visibility="public" xPosition="1310.0" yPosition="812.0">
+      <Fields>
+        <Field name="serialVersionUID" type="long" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="nombrePasta" type="String" visibility="private"/>
+        <Field name="ciudadanesCollection" type="Collection&lt;Ciudadanes&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombrePasta"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombrePasta" returnType="String" visibility="public"/>
+        <Method name="setNombrePasta" returnType="void" visibility="public">
+          <Argument type="String" name="nombrePasta"/>
+        </Method>
+        <Method name="getCiudadanesCollection" returnType="Collection&lt;Ciudadanes&gt;" visibility="public"/>
+        <Method name="setCiudadanesCollection" returnType="void" visibility="public">
+          <Argument type="Collection&lt;Ciudadanes&gt;" name="ciudadanesCollection"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="object"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="matrimoniosCollection1" source="clasesHibernate.Ciudadanes" target="clasesHibernate.Matrimonios" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="iDmadre" source="clasesHibernate.Ciudadanes" target="clasesHibernate.Ciudadanes" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="clasesHibernate.Matrimonios" target="clasesHibernate.Ciudadanes" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="clasesHibernate.Pastas" target="clasesHibernate.Ciudadanes" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="clasesHibernate.Ciudadanes" target="clasesHibernate.Pastas" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="iDConyuge2" source="clasesHibernate.Matrimonios" target="clasesHibernate.Ciudadanes" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pastafavorita" source="clasesHibernate.Ciudadanes" target="clasesHibernate.Pastas" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="iDConyuge1" source="clasesHibernate.Matrimonios" target="clasesHibernate.Ciudadanes" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ciudadanesCollection" source="clasesHibernate.Pastas" target="clasesHibernate.Ciudadanes" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="clasesHibernate.Ciudadanes" target="clasesHibernate.Matrimonios" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="matrimoniosCollection" source="clasesHibernate.Ciudadanes" target="clasesHibernate.Matrimonios" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="iDpadre" source="clasesHibernate.Ciudadanes" target="clasesHibernate.Ciudadanes" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ciudadanesCollection" source="clasesHibernate.Ciudadanes" target="clasesHibernate.Ciudadanes" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ciudadanesCollection1" source="clasesHibernate.Ciudadanes" target="clasesHibernate.Ciudadanes" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="clasesHibernate.Ciudadanes" target="clasesHibernate.Ciudadanes" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
