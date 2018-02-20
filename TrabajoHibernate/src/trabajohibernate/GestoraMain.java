@@ -8,6 +8,7 @@ package trabajohibernate;
 import generated.Asiento;
 import java.util.ArrayList;
 import java.util.List;
+import org.hibernate.Session;
 
 /**
  *
@@ -16,7 +17,10 @@ import java.util.List;
  */
 public class GestoraMain {
     
+    private ManejadoraCiudadanes manejadoraCiudadanes;
+    private ManejadoraMatrimonios manejadoraMatrimonios;
     private ArrayList<Incidencia>incidencias;
+    private  Session ses;
     /*
     Descripción: Este método se encargará de recorrer la lista de asientos y realizar las actualizaciones correspondientes,
     dependiendo el tipo de asiento.
@@ -28,12 +32,16 @@ public class GestoraMain {
     */
     public void realizarActualizaciones(List<Asiento> listaAsientos)
     {
+        manejadoraCiudadanes=new ManejadoraCiudadanes();
+        manejadoraMatrimonios=new ManejadoraMatrimonios();
+        ses= HibernateUtil.getSessionFactory().openSession();
         Incidencia incidencia;
         for(int i=0;i<listaAsientos.size();i++)
         {
             switch(listaAsientos.get(i).getTipo())
             {
                 case "Divorcio":
+                    manejadoraMatrimonios.recuperar(ses, listaAsientos.get(i).getMatrimonio().intValue());//Para pasar de BigInteger a int
                     break;
                 case "Matrimonio":
                     break;

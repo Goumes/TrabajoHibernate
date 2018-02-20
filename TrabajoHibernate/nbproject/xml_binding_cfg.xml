@@ -10,4 +10,14 @@
 		</bindings>
 		<catalog/>
 	</schema>
+	<schema type='-xmlschema' package='' name='generated'>
+		<xjc-options>
+		</xjc-options>
+		<schema-sources>
+			<schema-source location='xml-resources/jaxb/generated/Registro11.xsd' origLocation='src/trabajohibernate/Registro11.xsd'/>
+		</schema-sources>
+		<bindings>
+		</bindings>
+		<catalog/>
+	</schema>
 </schemas>

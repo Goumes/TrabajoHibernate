@@ -5,6 +5,7 @@
  */
 package trabajohibernate;
 
+
 import generated.Anotaciones;
 import generated.Asiento;
 import java.io.File;
