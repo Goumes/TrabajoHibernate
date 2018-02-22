@@ -47,10 +47,10 @@ public class Matrimonios implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date fechafin;
     @JoinColumn(name = "IDConyuge1", referencedColumnName = "ID")
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, targetEntity = Ciudadanes.class)
     private Ciudadanes iDConyuge1;
     @JoinColumn(name = "IDConyuge2", referencedColumnName = "ID")
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, targetEntity = Ciudadanes.class)
     private Ciudadanes iDConyuge2;
 
     public Matrimonios() {
