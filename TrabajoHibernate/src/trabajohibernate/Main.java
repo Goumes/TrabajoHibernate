@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import org.hibernate.Session;
 
 /**
  *
@@ -61,6 +62,7 @@ public class Main {
         String nombreArchivo;
         File archivoAProcesar;
         Scanner teclado=new Scanner(System.in);
+        Session ses= HibernateUtil.getSessionFactory().openSession();
         int opcion;
         
         //LeerYValidarSiQuiereLeerFichero
@@ -100,7 +102,7 @@ public class Main {
             //Fin_LeerYValidarNombreFichero
             //JAXB A JIERRO DE POWER
             gestoraAsientos.obtenerListaAnotacionesDeXML(archivoAProcesar);
-            gestoraMain.realizarActualizaciones(gestoraAsientos.getListaAsientos());
+            gestoraMain.realizarActualizaciones(gestoraAsientos.getListaAsientos(),ses);
             
             //LeerYValidarSiQuiereLeerFichero
             do
@@ -119,7 +121,8 @@ public class Main {
             //FIN_LeerYValidarSiQuiereLeerFichero
         }
         //Fin_Mientras
-        
+        ses.close();
+        HibernateUtil.getSessionFactory().close();
     }//FIN
     
 }

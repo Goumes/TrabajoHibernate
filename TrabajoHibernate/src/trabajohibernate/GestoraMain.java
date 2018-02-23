@@ -29,7 +29,6 @@ public class GestoraMain {
     private ManejadoraCiudadanes manejadoraCiudadanes;
     private ManejadoraMatrimonios manejadoraMatrimonios;
     private ArrayList<Incidencia>incidencias;
-    private  Session ses;
     /*
     Descripción: Este método se encargará de recorrer la lista de asientos y realizar las actualizaciones correspondientes,
     dependiendo el tipo de asiento.
@@ -39,14 +38,15 @@ public class GestoraMain {
     Precondiciones: Si hay errores, se rellenará el array de incidencias, si no, nada.
     E/S: No hay
     */
-    public void realizarActualizaciones(List<Asiento> listaAsientos)
+    public void realizarActualizaciones(List<Asiento> listaAsientos,Session ses)
     {
         manejadoraCiudadanes=new ManejadoraCiudadanes();
         manejadoraMatrimonios=new ManejadoraMatrimonios();
-        ses= HibernateUtil.getSessionFactory().openSession();
+        
         incidencias=new ArrayList<Incidencia>();
         Incidencia incidencia;
         Matrimonios matrimonio;
+        boolean casado = false;
         for(int i=0;i<listaAsientos.size();i++)
         {
             switch(listaAsientos.get(i).getTipo())
@@ -78,18 +78,55 @@ public class GestoraMain {
                     }                               
                     break;
                 case "Matrimonio":
-                    ArrayList<Matrimonios>matrimonios;
+                    ArrayList<Matrimonios>matrimoniosC1_1;
+                    ArrayList<Matrimonios>matrimoniosC1_2;
+                    ArrayList<Matrimonios>matrimoniosC2_1;
+                    ArrayList<Matrimonios>matrimoniosC2_2;
                     Ciudadanes c1=manejadoraCiudadanes.recuperar(ses, listaAsientos.get(i).getCiudadane().get(0).getID().intValue());
                     Ciudadanes c2=manejadoraCiudadanes.recuperar(ses, listaAsientos.get(i).getCiudadane().get(1).getID().intValue());
-                    matrimonios=new ArrayList<>(c1.getMatrimoniosCollection());
+                    matrimoniosC1_1=new ArrayList<>(c1.getMatrimoniosCollection());
+                    matrimoniosC1_2=new ArrayList<>(c1.getMatrimoniosCollection1());
+                    matrimoniosC2_1=new ArrayList<>(c2.getMatrimoniosCollection());
+                    matrimoniosC2_2=new ArrayList<>(c2.getMatrimoniosCollection1());
                     if(c1==null||c2==null)
                     {
                         incidencia=new Incidencia(new Date(),"Alguno de los conyuges no existe",listaAsientos.get(i));
                         incidencias.add(incidencia);
                         System.out.println(incidencia.getMotivo());
                     }
-                    if()
                     
+                    else if(!matrimoniosC1_1.isEmpty()||
+                            !matrimoniosC1_2.isEmpty()||
+                            !matrimoniosC2_1.isEmpty()||
+                            !matrimoniosC2_2.isEmpty())
+                    {
+                        
+                        if(!matrimoniosC1_1.isEmpty()&&matrimoniosC1_1.get(matrimoniosC1_1.size()-1).getFechafin()==null)casado = true; 
+
+                        else if(!matrimoniosC1_2.isEmpty()&&matrimoniosC1_2.get(matrimoniosC1_2.size()-1).getFechafin()==null)casado = true; 
+
+                        else if(!matrimoniosC2_1.isEmpty() && matrimoniosC2_1.get(matrimoniosC2_1.size()-1).getFechafin()==null)casado = true; 
+
+                        else if(!matrimoniosC2_2.isEmpty() && matrimoniosC2_2.get(matrimoniosC2_2.size()-1).getFechafin()==null) casado=true;                       
+                        if (casado)
+                        {
+                            incidencia=new Incidencia(new Date(),"Alguno de los conyuges est� casad@",listaAsientos.get(i));
+                            incidencias.add(incidencia);
+                            System.out.println(incidencia.getMotivo());
+                        }                      
+                    }
+                    
+                    else if(c1.getFechamuerte()!=null||c2.getFechamuerte()!=null)
+                    {
+                            incidencia=new Incidencia(new Date(),"Alguno la palmao",listaAsientos.get(i));
+                            incidencias.add(incidencia);
+                            System.out.println(incidencia.getMotivo());
+                    }
+                    else
+                    {
+                        manejadoraMatrimonios.crearMatrimonio(ses, new Date(), c1, c2);
+                        System.out.println("San Casao");
+                    }
                     break;
                 case "Nacimiento":
                     break;
@@ -97,8 +134,8 @@ public class GestoraMain {
                     break;
             }
         }       
-        ses.close();
-        HibernateUtil.getSessionFactory().close();
+        //ses.close();
+        //HibernateUtil.getSessionFactory().close();
     }
  
     //EXPLICACIONES A GOME
