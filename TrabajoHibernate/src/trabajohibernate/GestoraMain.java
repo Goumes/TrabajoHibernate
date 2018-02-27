@@ -7,8 +7,10 @@ package trabajohibernate;
 
 import clasesHibernate.Ciudadanes;
 import clasesHibernate.Matrimonios;
+import clasesHibernate.Pastas;
 import generated.Asiento;
 import generated.Ciudadane;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -29,6 +31,8 @@ public class GestoraMain {
     private ManejadoraCiudadanes manejadoraCiudadanes;
     private ManejadoraMatrimonios manejadoraMatrimonios;
     private ArrayList<Incidencia>incidencias;
+    private ManejadoraPastas manejadoraPastas;
+    private DateFormat format = new SimpleDateFormat("dd/mm/yyyy");
     /*
     Descripción: Este método se encargará de recorrer la lista de asientos y realizar las actualizaciones correspondientes,
     dependiendo el tipo de asiento.
@@ -42,7 +46,7 @@ public class GestoraMain {
     {
         manejadoraCiudadanes=new ManejadoraCiudadanes();
         manejadoraMatrimonios=new ManejadoraMatrimonios();
-        
+        manejadoraPastas=new ManejadoraPastas();
         incidencias=new ArrayList<Incidencia>();
         Incidencia incidencia;
         Matrimonios matrimonio;
@@ -129,8 +133,65 @@ public class GestoraMain {
                     }
                     break;
                 case "Nacimiento":
+                    Ciudadanes c=manejadoraCiudadanes.recuperar(ses, listaAsientos.get(i).getCiudadane().get(0).getID().intValue());
+                    Pastas p=manejadoraPastas.recuperarPasta(ses, listaAsientos.get(i).getCiudadane().get(0).getPastaFavorita());
+                    Ciudadanes padre=manejadoraCiudadanes.recuperar(ses, listaAsientos.get(i).getCiudadane().get(0).getPadre().getID().intValue());
+                    Ciudadanes madre=manejadoraCiudadanes.recuperar(ses, listaAsientos.get(i).getCiudadane().get(0).getMadre().getID().intValue());
+                    
+                    Date fechaNacimiento = null;
+                    try {
+                        fechaNacimiento = format.parse(listaAsientos.get(i).getCiudadane().get(0).getFechaNacimiento());
+                    } catch (ParseException ex) {
+                        Logger.getLogger(GestoraMain.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    if(c!=null)
+                    {
+                        incidencia=new Incidencia(new Date(),"Este ciudadane ya existe",listaAsientos.get(i));
+                        incidencias.add(incidencia);
+                        System.out.println(incidencia.getMotivo());
+                    }
+                    else if(p==null)
+                    {
+                        incidencia=new Incidencia(new Date(),"Esta pasta no existe",listaAsientos.get(i));
+                        incidencias.add(incidencia);
+                        System.out.println(incidencia.getMotivo());
+                    }
+                    
+                    else if (padre == null || madre == null)
+                    {
+                        if (padre == null)
+                        {
+                            incidencia=new Incidencia(new Date(),"El padre no existe",listaAsientos.get(i));
+                            incidencias.add(incidencia);
+                            System.out.println(incidencia.getMotivo());
+                        }
+                        
+                        if (madre == null)
+                        {
+                            incidencia=new Incidencia(new Date(),"La madre no existe",listaAsientos.get(i));
+                            incidencias.add(incidencia);
+                            System.out.println(incidencia.getMotivo());
+                        }
+                    }
+                    
+                    //Este ciudadane tiene que ser el que viene del xml, no el recuperado de Hibernate
+                    
+                    else if (listaAsientos.get(i).getCiudadane() != null && fechaNacimiento.compareTo(new Date()) > 0)
+                    {
+                        incidencia=new Incidencia(new Date(),"La fecha de nacimiento es posterior a la fecha actual",listaAsientos.get(i));
+                        incidencias.add(incidencia);
+                        System.out.println(incidencia.getMotivo());
+                    }
+                    
+                    else
+                    {
+                        manejadoraCiudadanes.crearCiudadane(ses, listaAsientos.get(i).getCiudadane().get(0).getID().intValue(), listaAsientos.get(i).getCiudadane().get(0).getNombre(), listaAsientos.get(i).getCiudadane().get(0).getApellidos(), listaAsientos.get(i).getCiudadane().get(0).getSexo().charAt(0), madre, padre, p, Short.valueOf("0"), fechaNacimiento);
+                         System.out.println("Ha nacio");
+                    }
+                    
                     break;
                 case "Deceso":
+                    Ciudadanes c = //HACER LOS DECESOS CRACKS
                     break;
             }
         }       
