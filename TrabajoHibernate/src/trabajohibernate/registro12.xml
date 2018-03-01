@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>        
+<Anotaciones>
+<!-- Ciudadano con id existente-->
+	<Asiento ID="5000" Tipo="Nacimiento">
+			<Ciudadane ID="5">
+				<Madre ID="1"/>
+				<Padre ID="3"/>
+				<Nombre>Zosimo</Nombre>
+				<Apellidos>Melocoton</Apellidos>
+				<FechaNacimiento>06/12/1982</FechaNacimiento>
+				<Sexo>M</Sexo>
+				<PastaFavorita>Spagueti</PastaFavorita> 
+			</Ciudadane>
+	</Asiento>
+	
+	<!-- Ciudadano con pasta inexistente -->
+	<Asiento ID="5001" Tipo="Nacimiento">
+			<Ciudadane ID="900">
+				<Madre ID="1"/>
+				<Padre ID="3"/>
+				<Nombre>Zosimo</Nombre>
+				<Apellidos>Melocoton</Apellidos>
+				<FechaNacimiento>06/12/1982</FechaNacimiento>
+				<Sexo>M</Sexo>
+				<PastaFavorita>hfdsufna</PastaFavorita> 
+			</Ciudadane>
+	</Asiento>
+	
+	<!-- Ciudadane con fecha de nacimiento futura  -->
+	<Asiento ID="5002" Tipo="Nacimiento">
+			<Ciudadane ID="901">
+				<Madre ID="1"/>
+				<Padre ID="3"/>
+				<Nombre>Zosimo</Nombre>
+				<Apellidos>Melocoton</Apellidos>
+				<FechaNacimiento>06/12/2025</FechaNacimiento>
+				<Sexo>M</Sexo>
+				<PastaFavorita>Fusili</PastaFavorita> 
+			</Ciudadane>
+	</Asiento>
+	
+	<!-- Ciudadane con id de padre o madre no existente -->
+	<Asiento ID="5003" Tipo="Nacimiento">
+			<Ciudadane ID="901">
+				<Madre ID="201"/>
+				<Padre ID="156"/>
+				<Nombre>Zosimo</Nombre>
+				<Apellidos>Melocoton</Apellidos>
+				<FechaNacimiento>06/12/1968</FechaNacimiento>
+				<Sexo>M</Sexo>
+				<PastaFavorita>Fusili</PastaFavorita> 
+			</Ciudadane>
+	</Asiento>
+	
+	<!-- Matrimonio que incluya el id de un ciudadane que no existe -->
+	
+	<Asiento ID="5004" Tipo="Matrimonio">
+		<Ciudadane ID="905"/>
+		<Ciudadane ID="54"/>
+		<Fecha>26/01/2018</Fecha>
+	</Asiento>
+	
+	<!-- Matrimonio que incluya el id de un ciudadane que ya esta casado -->
+	
+	<Asiento ID="5005" Tipo="Matrimonio">
+		<Ciudadane ID="50"/>
+		<Ciudadane ID="29"/>
+		<Fecha>26/01/2018</Fecha>
+	</Asiento>
+	
+	<!-- Matrimonio que incluya el id de un ciudadane que ya ha muerto-->
+	
+	<Asiento ID="5006" Tipo="Matrimonio">
+		<Ciudadane ID="4"/>
+		<Ciudadane ID="1"/>
+		<Fecha>26/01/2018</Fecha>
+	</Asiento>
+	
+	<!-- Matrimonio futuro-->
+	
+	<Asiento ID="5007" Tipo="Matrimonio">
+		<Ciudadane ID="5"/>
+		<Ciudadane ID="6"/>
+		<Fecha>26/01/2025</Fecha>
+	</Asiento>
+	
+	<!-- Divorcio para un matrimonio que no existe !!!!!!!!-->
+	
+	<Asiento ID="5008" Tipo="Divorcio">
+		<Matrimonio>10</Matrimonio>
+		<Fecha>24/12/2017</Fecha>
+	</Asiento>
+	
+	<!-- Divorcio para una fecha anterior al matrimonio-->
+	
+	<Asiento ID="5009" Tipo="Divorcio">
+		<Matrimonio>6</Matrimonio>
+		<Fecha>24/12/1900</Fecha>
+	</Asiento>
+	
+	<!-- Divorcio para un matrimonio ya disuelto-->
+	
+	<Asiento ID="5010" Tipo="Divorcio">
+		<Matrimonio>3</Matrimonio>
+		<Fecha>24/12/2000</Fecha>
+	</Asiento>
+	
+	
+	<!-- Muerte de un ciudadane que no existe -->
+    <Asiento ID="5011" Tipo="Deceso">
+		<Ciudadane ID="909"/>
+		<Fecha>18/12/2017</Fecha>
+	</Asiento>
+	
+	<!-- Muerte de un ciudadane que ya esta muerto -->
+    <Asiento ID="5012" Tipo="Deceso">
+		<Ciudadane ID="4"/>
+		<Fecha>18/12/2017</Fecha>
+	</Asiento>
+	
+	
+</Anotaciones>

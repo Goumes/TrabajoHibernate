@@ -102,7 +102,7 @@ public class Main {
             //Fin_LeerYValidarNombreFichero
             //JAXB A JIERRO DE POWER
             gestoraAsientos.obtenerListaAnotacionesDeXML(archivoAProcesar);
-            gestoraMain.realizarActualizaciones(gestoraAsientos.getListaAsientos(),ses);
+            gestoraMain.realizarActualizaciones(gestoraAsientos.getListaAsientos(),ses,nombreArchivo);
             
             //LeerYValidarSiQuiereLeerFichero
             do

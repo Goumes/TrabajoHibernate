@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Incidencias fechaLog="2018-03-01T14:33:11.967+01:00" archivo="registro12">
+    <incidencias>
+        <asiento ID="5000" Tipo="Nacimiento">
+            <Ciudadane ID="5">
+                <Madre ID="1"/>
+                <Padre ID="3"/>
+                <Nombre>Zosimo</Nombre>
+                <Apellidos>Melocoton</Apellidos>
+                <FechaNacimiento>06/12/1982</FechaNacimiento>
+                <Sexo>M</Sexo>
+                <PastaFavorita>Spagueti</PastaFavorita>
+            </Ciudadane>
+        </asiento>
+        <momento>2018-03-01T14:33:12.046+01:00</momento>
+        <motivo>Este ciudadane ya existe</motivo>
+    </incidencias>
+    <incidencias>
+        <asiento ID="5001" Tipo="Nacimiento">
+            <Ciudadane ID="900">
+                <Madre ID="1"/>
+                <Padre ID="3"/>
+                <Nombre>Zosimo</Nombre>
+                <Apellidos>Melocoton</Apellidos>
+                <FechaNacimiento>06/12/1982</FechaNacimiento>
+                <Sexo>M</Sexo>
+                <PastaFavorita>hfdsufna</PastaFavorita>
+            </Ciudadane>
+        </asiento>
+        <momento>2018-03-01T14:33:12.046+01:00</momento>
+        <motivo>Esta pasta no existe</motivo>
+    </incidencias>
+    <incidencias>
+        <asiento ID="5002" Tipo="Nacimiento">
+            <Ciudadane ID="901">
+                <Madre ID="1"/>
+                <Padre ID="3"/>
+                <Nombre>Zosimo</Nombre>
+                <Apellidos>Melocoton</Apellidos>
+                <FechaNacimiento>06/12/2025</FechaNacimiento>
+                <Sexo>M</Sexo>
+                <PastaFavorita>Fusili</PastaFavorita>
+            </Ciudadane>
+        </asiento>
+        <momento>2018-03-01T14:33:12.061+01:00</momento>
+        <motivo>La fecha de nacimiento es posterior a la fecha actual</motivo>
+    </incidencias>
+    <incidencias>
+        <asiento ID="5003" Tipo="Nacimiento">
+            <Ciudadane ID="901">
+                <Madre ID="201"/>
+                <Padre ID="156"/>
+                <Nombre>Zosimo</Nombre>
+                <Apellidos>Melocoton</Apellidos>
+                <FechaNacimiento>06/12/1968</FechaNacimiento>
+                <Sexo>M</Sexo>
+                <PastaFavorita>Fusili</PastaFavorita>
+            </Ciudadane>
+        </asiento>
+        <momento>2018-03-01T14:33:12.061+01:00</momento>
+        <motivo>El padre no existe</motivo>
+    </incidencias>
+    <incidencias>
+        <asiento ID="5003" Tipo="Nacimiento">
+            <Ciudadane ID="901">
+                <Madre ID="201"/>
+                <Padre ID="156"/>
+                <Nombre>Zosimo</Nombre>
+                <Apellidos>Melocoton</Apellidos>
+                <FechaNacimiento>06/12/1968</FechaNacimiento>
+                <Sexo>M</Sexo>
+                <PastaFavorita>Fusili</PastaFavorita>
+            </Ciudadane>
+        </asiento>
+        <momento>2018-03-01T14:33:12.061+01:00</momento>
+        <motivo>La madre no existe</motivo>
+    </incidencias>
+    <incidencias>
+        <asiento ID="5004" Tipo="Matrimonio">
+            <Ciudadane ID="905"/>
+            <Ciudadane ID="54"/>
+            <Fecha>26/01/2018</Fecha>
+        </asiento>
+        <momento>2018-03-01T14:33:12.108+01:00</momento>
+        <motivo>Alguno de los conyuges no existe</motivo>
+    </incidencias>
+    <incidencias>
+        <asiento ID="5005" Tipo="Matrimonio">
+            <Ciudadane ID="12"/>
+            <Ciudadane ID="2"/>
+            <Fecha>26/01/2018</Fecha>
+        </asiento>
+        <momento>2018-03-01T14:33:12.155+01:00</momento>
+        <motivo>Alguno la palmao</motivo>
+    </incidencias>
+    <incidencias>
+        <asiento ID="5006" Tipo="Matrimonio">
+            <Ciudadane ID="4"/>
+            <Ciudadane ID="1"/>
+            <Fecha>26/01/2018</Fecha>
+        </asiento>
+        <momento>2018-03-01T14:33:12.171+01:00</momento>
+        <motivo>Alguno la palmao</motivo>
+    </incidencias>
+    <incidencias>
+        <asiento ID="5007" Tipo="Matrimonio">
+            <Ciudadane ID="5"/>
+            <Ciudadane ID="6"/>
+            <Fecha>26/01/2025</Fecha>
+        </asiento>
+        <momento>2018-03-01T14:33:12.186+01:00</momento>
+        <motivo>San querio casá ante tiempo</motivo>
+    </incidencias>
+    <incidencias>
+        <asiento ID="5008" Tipo="Divorcio">
+            <Matrimonio>10</Matrimonio>
+            <Fecha>24/12/2017</Fecha>
+        </asiento>
+        <momento>2018-03-01T14:33:12.186+01:00</momento>
+        <motivo>El matrimonio a divorciar no existe</motivo>
+    </incidencias>
+    <incidencias>
+        <asiento ID="5009" Tipo="Divorcio">
+            <Matrimonio>5</Matrimonio>
+            <Fecha>24/12/1900</Fecha>
+        </asiento>
+        <momento>2018-03-01T14:33:12.202+01:00</momento>
+        <motivo>El matrimonio ya se ha divorciado</motivo>
+    </incidencias>
+    <incidencias>
+        <asiento ID="5010" Tipo="Divorcio">
+            <Matrimonio>3</Matrimonio>
+            <Fecha>24/12/2000</Fecha>
+        </asiento>
+        <momento>2018-03-01T14:33:12.202+01:00</momento>
+        <motivo>El matrimonio ya se ha divorciado</motivo>
+    </incidencias>
+    <incidencias>
+        <asiento ID="5011" Tipo="Deceso">
+            <Ciudadane ID="909"/>
+            <Fecha>18/12/2017</Fecha>
+        </asiento>
+        <momento>2018-03-01T14:33:12.217+01:00</momento>
+        <motivo>Este ciudadane no existe</motivo>
+    </incidencias>
+    <incidencias>
+        <asiento ID="5012" Tipo="Deceso">
+            <Ciudadane ID="4"/>
+            <Fecha>18/12/2017</Fecha>
+        </asiento>
+        <momento>2018-03-01T14:33:12.217+01:00</momento>
+        <motivo>Este ciudadane ya está muerto</motivo>
+    </incidencias>
+</Incidencias>

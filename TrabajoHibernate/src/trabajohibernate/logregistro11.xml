@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Incidencias fechaLog="2018-03-01T13:35:56.058+01:00" archivo="registro11">
+    <incidencias>
+        <asiento ID="5001" Tipo="Matrimonio">
+            <Ciudadane ID="7"/>
+            <Ciudadane ID="54"/>
+            <Fecha>26/01/2018</Fecha>
+        </asiento>
+        <momento>2018-03-01T13:35:56.152+01:00</momento>
+        <motivo>Alguno de los conyuges está casad@</motivo>
+    </incidencias>
+    <incidencias>
+        <asiento ID="5002" Tipo="Deceso">
+            <Ciudadane ID="12"/>
+            <Fecha>18/12/2017</Fecha>
+        </asiento>
+        <momento>2018-03-01T13:35:56.152+01:00</momento>
+        <motivo>Este ciudadane ya está muerto</motivo>
+    </incidencias>
+    <incidencias>
+        <asiento ID="5003" Tipo="Nacimiento">
+            <Ciudadane ID="58">
+                <Madre ID="29"/>
+                <Padre ID="50"/>
+                <Nombre>Anastasia</Nombre>
+                <Apellidos>Del Bosque Salvatierra</Apellidos>
+                <FechaNacimiento>24/01/2018</FechaNacimiento>
+                <Sexo>M</Sexo>
+                <PastaFavorita>Farfalle</PastaFavorita>
+            </Ciudadane>
+        </asiento>
+        <momento>2018-03-01T13:35:56.168+01:00</momento>
+        <motivo>Este ciudadane ya existe</motivo>
+    </incidencias>
+    <incidencias>
+        <asiento ID="5004" Tipo="Divorcio">
+            <Matrimonio>5</Matrimonio>
+            <Fecha>24/12/2017</Fecha>
+        </asiento>
+        <momento>2018-03-01T13:35:56.183+01:00</momento>
+        <motivo>El matrimonio ya se ha divorciado</motivo>
+    </incidencias>
+    <incidencias>
+        <asiento ID="5005" Tipo="Matrimonio">
+            <Ciudadane ID="42"/>
+            <Ciudadane ID="44"/>
+            <Fecha>14/01/2018</Fecha>
+        </asiento>
+        <momento>2018-03-01T13:35:56.199+01:00</momento>
+        <motivo>Alguno de los conyuges está casad@</motivo>
+    </incidencias>
+    <incidencias>
+        <asiento ID="5006" Tipo="Deceso">
+            <Ciudadane ID="17"/>
+            <Fecha>13/12/2017</Fecha>
+        </asiento>
+        <momento>2018-03-01T13:35:56.214+01:00</momento>
+        <motivo>Este ciudadane ya está muerto</motivo>
+    </incidencias>
+</Incidencias>

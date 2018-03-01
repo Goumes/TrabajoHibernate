@@ -9,8 +9,14 @@ package trabajohibernate;
 import generated.Anotaciones;
 import generated.Asiento;
 import java.io.File;
+import java.io.StringWriter;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 /**
@@ -39,7 +45,23 @@ public class GestoraAsientos {
             ex.printStackTrace();
         }
     }
-
+    
+    public void escribirIncidencias(LogIncidencia logIncidencia)
+    {
+        JAXBContext contexto;
+        File archivoIncidencias=new File("src\\trabajoHibernate\\log"+logIncidencia.getNombreArchivo()+".xml");
+        try {
+            contexto = JAXBContext.newInstance(LogIncidencia.class);
+            Marshaller marshalero = contexto.createMarshaller();
+            marshalero.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            StringWriter escribiente = new StringWriter();
+            marshalero.marshal(logIncidencia, archivoIncidencias);
+            // ahora lo marshaleamos a un stream para visualizarlo
+            marshalero.marshal(logIncidencia, escribiente);
+        } catch (JAXBException ex) {
+            ex.printStackTrace();
+        }
+    }
     public List<Asiento> getListaAsientos() {
         return listaAsientos;
     }
