@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Incidencias fechaLog="2018-03-01T14:33:11.967+01:00" archivo="registro12">
+<Incidencias fechaLog="2018-03-02T08:18:25.337+01:00" archivo="registro12">
     <incidencias>
         <asiento ID="5000" Tipo="Nacimiento">
             <Ciudadane ID="5">
@@ -12,7 +12,7 @@
                 <PastaFavorita>Spagueti</PastaFavorita>
             </Ciudadane>
         </asiento>
-        <momento>2018-03-01T14:33:12.046+01:00</momento>
+        <momento>2018-03-02T08:18:25.446+01:00</momento>
         <motivo>Este ciudadane ya existe</motivo>
     </incidencias>
     <incidencias>
@@ -27,7 +27,7 @@
                 <PastaFavorita>hfdsufna</PastaFavorita>
             </Ciudadane>
         </asiento>
-        <momento>2018-03-01T14:33:12.046+01:00</momento>
+        <momento>2018-03-02T08:18:25.446+01:00</momento>
         <motivo>Esta pasta no existe</motivo>
     </incidencias>
     <incidencias>
@@ -42,7 +42,7 @@
                 <PastaFavorita>Fusili</PastaFavorita>
             </Ciudadane>
         </asiento>
-        <momento>2018-03-01T14:33:12.061+01:00</momento>
+        <momento>2018-03-02T08:18:25.446+01:00</momento>
         <motivo>La fecha de nacimiento es posterior a la fecha actual</motivo>
     </incidencias>
     <incidencias>
@@ -57,7 +57,7 @@
                 <PastaFavorita>Fusili</PastaFavorita>
             </Ciudadane>
         </asiento>
-        <momento>2018-03-01T14:33:12.061+01:00</momento>
+        <momento>2018-03-02T08:18:25.462+01:00</momento>
         <motivo>El padre no existe</motivo>
     </incidencias>
     <incidencias>
@@ -72,7 +72,7 @@
                 <PastaFavorita>Fusili</PastaFavorita>
             </Ciudadane>
         </asiento>
-        <momento>2018-03-01T14:33:12.061+01:00</momento>
+        <momento>2018-03-02T08:18:25.462+01:00</momento>
         <motivo>La madre no existe</motivo>
     </incidencias>
     <incidencias>
@@ -81,17 +81,17 @@
             <Ciudadane ID="54"/>
             <Fecha>26/01/2018</Fecha>
         </asiento>
-        <momento>2018-03-01T14:33:12.108+01:00</momento>
+        <momento>2018-03-02T08:18:25.540+01:00</momento>
         <motivo>Alguno de los conyuges no existe</motivo>
     </incidencias>
     <incidencias>
         <asiento ID="5005" Tipo="Matrimonio">
-            <Ciudadane ID="12"/>
-            <Ciudadane ID="2"/>
+            <Ciudadane ID="50"/>
+            <Ciudadane ID="29"/>
             <Fecha>26/01/2018</Fecha>
         </asiento>
-        <momento>2018-03-01T14:33:12.155+01:00</momento>
-        <motivo>Alguno la palmao</motivo>
+        <momento>2018-03-02T08:18:25.555+01:00</momento>
+        <motivo>Alguno de los conyuges está casad@</motivo>
     </incidencias>
     <incidencias>
         <asiento ID="5006" Tipo="Matrimonio">
@@ -99,7 +99,7 @@
             <Ciudadane ID="1"/>
             <Fecha>26/01/2018</Fecha>
         </asiento>
-        <momento>2018-03-01T14:33:12.171+01:00</momento>
+        <momento>2018-03-02T08:18:25.587+01:00</momento>
         <motivo>Alguno la palmao</motivo>
     </incidencias>
     <incidencias>
@@ -108,7 +108,7 @@
             <Ciudadane ID="6"/>
             <Fecha>26/01/2025</Fecha>
         </asiento>
-        <momento>2018-03-01T14:33:12.186+01:00</momento>
+        <momento>2018-03-02T08:18:25.602+01:00</momento>
         <motivo>San querio casá ante tiempo</motivo>
     </incidencias>
     <incidencias>
@@ -116,23 +116,23 @@
             <Matrimonio>10</Matrimonio>
             <Fecha>24/12/2017</Fecha>
         </asiento>
-        <momento>2018-03-01T14:33:12.186+01:00</momento>
+        <momento>2018-03-02T08:18:25.602+01:00</momento>
         <motivo>El matrimonio a divorciar no existe</motivo>
     </incidencias>
     <incidencias>
         <asiento ID="5009" Tipo="Divorcio">
-            <Matrimonio>5</Matrimonio>
+            <Matrimonio>6</Matrimonio>
             <Fecha>24/12/1900</Fecha>
         </asiento>
-        <momento>2018-03-01T14:33:12.202+01:00</momento>
-        <motivo>El matrimonio ya se ha divorciado</motivo>
+        <momento>2018-03-02T08:18:25.602+01:00</momento>
+        <motivo>La fecha de casamiento es posterior a la del divorcio, me ahorro las palabritas</motivo>
     </incidencias>
     <incidencias>
         <asiento ID="5010" Tipo="Divorcio">
             <Matrimonio>3</Matrimonio>
             <Fecha>24/12/2000</Fecha>
         </asiento>
-        <momento>2018-03-01T14:33:12.202+01:00</momento>
+        <momento>2018-03-02T08:18:25.680+01:00</momento>
         <motivo>El matrimonio ya se ha divorciado</motivo>
     </incidencias>
     <incidencias>
@@ -140,7 +140,7 @@
             <Ciudadane ID="909"/>
             <Fecha>18/12/2017</Fecha>
         </asiento>
-        <momento>2018-03-01T14:33:12.217+01:00</momento>
+        <momento>2018-03-02T08:18:25.680+01:00</momento>
         <motivo>Este ciudadane no existe</motivo>
     </incidencias>
     <incidencias>
@@ -148,7 +148,7 @@
             <Ciudadane ID="4"/>
             <Fecha>18/12/2017</Fecha>
         </asiento>
-        <momento>2018-03-01T14:33:12.217+01:00</momento>
+        <momento>2018-03-02T08:18:25.680+01:00</momento>
         <motivo>Este ciudadane ya está muerto</motivo>
     </incidencias>
 </Incidencias>

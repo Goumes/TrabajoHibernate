@@ -64,6 +64,7 @@ public class GestoraMain {
         Date fechaNacimiento = null;
         Date fechaMuerte = null;
         Date fechaMatrimonio = null;
+        Date fechaDivorcio=null;
         boolean casado = false;
         for(int i=0;i<listaAsientos.size();i++)
         {
@@ -71,6 +72,11 @@ public class GestoraMain {
             {
                 case "Divorcio":
                     matrimonio=manejadoraMatrimonios.recuperar(ses, listaAsientos.get(i).getMatrimonio().intValue());//Para pasar de BigInteger a int
+                    try {
+                        fechaDivorcio = format.parse(listaAsientos.get(i).getFecha());
+                    } catch (ParseException ex) {
+                        Logger.getLogger(GestoraMain.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     //Aqui coger la fecha din de llista asiento en vez de la del matrimonio
                     if(matrimonio==null)
                     {
@@ -84,7 +90,7 @@ public class GestoraMain {
                         incidencias.add(incidencia);
                         System.out.println(incidencia.getMotivo());
                     }
-                    else if(matrimonio.getFechafin()== null && matrimonio.getFechamatrimonio().compareTo(matrimonio.getFechafin())>0)//Quitar esta fecha fin y poner la de asiento
+                    else if(matrimonio.getFechafin()== null && matrimonio.getFechamatrimonio().compareTo(fechaDivorcio)>0)//Quitar esta fecha fin y poner la de asiento
                     {
                         incidencia=new Incidencia(new Date(),"La fecha de casamiento es posterior a la del divorcio, me ahorro las palabritas",listaAsientos.get(i));
                         incidencias.add(incidencia);
@@ -226,7 +232,17 @@ public class GestoraMain {
                     break;
                 case "Deceso":
                     c1 = manejadoraCiudadanes.recuperar(ses, listaAsientos.get(i).getCiudadane().get(0).getID().intValue());
-                   
+                    
+                    if(c1!=null)
+                    {
+                        matrimoniosC1_1=new ArrayList<>(c1.getMatrimoniosCollection());
+                        matrimoniosC1_2=new ArrayList<>(c1.getMatrimoniosCollection1());
+                    }
+                    else
+                    {
+                        matrimoniosC1_1=new ArrayList<>();
+                        matrimoniosC1_2=new ArrayList<>();
+                    }
                     try {
                         fechaMuerte = format.parse(listaAsientos.get(i).getFecha());
                     } catch (ParseException ex) {
@@ -250,7 +266,21 @@ public class GestoraMain {
                     else
                     {
                         manejadoraCiudadanes.morir(ses, c1, fechaMuerte);
-                        System.out.println("Ha palmao");
+                         System.out.println("Ha palmao");
+                        if((!matrimoniosC1_1.isEmpty()&&matrimoniosC1_1.get(matrimoniosC1_1.size()-1).getFechafin()==null))
+                        {
+                            
+                            matrimonio=manejadoraMatrimonios.recuperar(ses, matrimoniosC1_1.get(matrimoniosC1_1.size()-1).getId());
+                            manejadoraMatrimonios.divorciar(ses, matrimonio, fechaMuerte);
+                             System.out.println("Ha palmao y sa divorciao");
+                        }
+                        else if((!matrimoniosC1_2.isEmpty()&&matrimoniosC1_2.get(matrimoniosC1_2.size()-1).getFechafin()==null))
+                        {
+                            matrimonio=manejadoraMatrimonios.recuperar(ses, matrimoniosC1_2.get(matrimoniosC1_2.size()-1).getId());
+                            manejadoraMatrimonios.divorciar(ses, matrimonio, fechaMuerte);
+                            System.out.println("Ha palmao y sa divorciao");
+                        }
+                       
                     }
                     break;
             }
